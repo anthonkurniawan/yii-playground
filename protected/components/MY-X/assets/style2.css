@@ -1,0 +1,59 @@
+/*--public $decorationCssClass='portlet-decoration';--*/
+.Mydecoration-portlet{  		/*header*/
+	padding: 3px 8px;
+	/*background: #000099; /*biru aj*/
+	/*background: #555;  /*abu gelap*/
+	/*border-left: 1px solid #eee;*/	
+	border-left: 0px solid #6FACCF;
+	-moz-border-radius: 5px; -webkit-border-radius: 5px;
+}
+/*--Header Title--*/
+.Mytitle-portlet{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	color: #e87b10; /* title color */
+}
+
+/*----public $contentCssClass='portlet-content';-----*/
+.Mycontent-portlet {
+	margin: 0px;
+	padding: 0px;
+	/*background:#EFFDFF;   /*content bg color */
+	background:#fff;	/*content bg color */
+}
+.Mycontent-portlet ul{
+
+}
+.Mycontent-portlet li{
+	margin-left:5px;
+	font-size: 11px;
+	text-decoration: none;
+	list-style-type: none; 
+	padding:2px;
+}
+
+/*----------------- CLASS OPERATION (CONTENT MENU)-----------------*/
+.Myoperations li{ border-top: 1px solid #F1e1e1;		 /*#F4F4F4*/}
+.Myoperations li ul li{ margin-left: 5px; border-top: 1px dotted #F1e1e1; }
+
+.Myoperations li a{
+	display:block; 
+	text-decoration:none; 
+	/*font: bold 11px Arial;*/
+	font: normal 1.1em "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	color: #555 ;	
+}
+.Myoperations li span{
+	color: #52565B;
+	font-weight:bold;
+}
+
+.Myoperations li a:visited{color: #555 ;}
+.Myoperations li a:hover{
+	/*background: #80CFFF;   -----biru muda*/
+	/*background:#e60; color:#fff;  /*bg:orange txt:putih */
+	background: #f3f3f3; color:#000;   /*bg:abu txt:hitam */
+	-moz-border-radius: 5px; -webkit-border-radius: 5px;
+}

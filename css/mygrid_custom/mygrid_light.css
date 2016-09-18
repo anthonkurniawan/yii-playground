@@ -1,0 +1,299 @@
+/*------------------------------------------------- #BASE ------------------------------------------------------*/
+.grid-view-loading{background:url(loading.gif) no-repeat;}
+
+.grid-view{ padding: 15px 0; }
+/*div.grid-view{	border: 1px #D0E3EF solid; }	/*default border box div*/
+.grid-view .empty{ font-style: italic; }
+
+/*-------------------------------------------------- #TABLE----------------------------------------------------*/
+.grid-view table.items	 
+{
+	/*background: white;
+	border-collapse: collapse;
+	border: 1px #D0E3EF solid;*/
+	border-collapse:separate;border-spacing:1;   /* border for header(shadow separator*/
+	/*border: 1px #D0E3EF solid; /*XXXXXXXXXXXXXXXXX*/
+	border:1px solid  #c2d5dc;
+	margin: 0 0 0px 0;    /*ATUR BETWEEN DIV ("SUMMARY" - "TABLE" -"PAGER")*/
+	width: 100%; /*XXXXXXXXXXXXXXXXXX*/
+}
+
+/*-------------------------------------------------- #HEADER (cutom)-----------------------------------------------------*/
+/*.grid-view table.items th  /*th header default
+{
+	font-size: 0.9em;    (!! DEFAULT BAWAAN YII )
+	border: 1px white solid;
+	padding: 0.3em;
+	color: white;
+	background: url("bg.gif") repeat-x scroll left top white;
+	text-align: center;	
+}		*/
+
+.grid-view table.items th  /* default skin ---------*/
+{	
+	background-Color:#D4D0C8;
+	border: 1px solid;
+	border-color : white Gray Gray white;
+	margin:5px 0px 5px 0px ;
+	padding:5px 0px 5px 0px ;
+
+}	
+
+/* skyblue skin ----------------*/
+.grid-view table.items th {
+	background-image:url(imgs/skin_light_header.png);
+	background-position:0px -1px\9;
+	
+	border-width: 1px 1px 1px 1px;
+	border-color : #FDFDFD #A4BED4 #A4BED4 #FDFDFD;
+	background-color:transparent;
+}
+
+/*----------------------------------------- #HEADER LINK /COLOR/SEPARATOR-----------------------------*/
+.grid-view table.items th a   /*default*/
+{
+	font-weight: normal;
+	text-decoration: none;
+	color:#616161;
+
+	font-family:Tahoma;
+	font-size:11px;
+	color:black;
+	vertical-align:top;
+	text-align:left;
+	
+	margin:0px 5px 0px 5px;
+	padding-left: 20px;
+	overflow: hidden;
+}
+
+/*---------- LINE SEPARATOR LINK (default ga di set)*/
+/*.grid-view table.items th a  
+{
+	border-left: 1px solid white;
+	border-right: 1px solid gray;
+	height:16px;
+}*/
+
+
+/*---------------------------------------------- #HOVER/ASC/DESC HEADER --------------------------------------------*/
+.grid-view table.items th a:hover{	color: #FFF;	}   /*default*/
+.grid-view table.items th a.asc{
+	background:url(imgs/sort_asc.gif)  right no-repeat;
+	padding-right: 20px;
+}
+.grid-view table.items th a.desc{
+	background:url(imgs/sort_asc.gif) right no-repeat;
+	padding-right: 20px;
+}
+
+/*------------------------------------------------ #TABLE TD CONTENT/ROW ---------------------------------------------*/
+
+
+/*----------------------------- #CUSTOM TD ---------------------------*/
+/*default*/
+/*.grid-view table.items td		{	border:1px;  }  */
+.grid-view table.items tr.even{ background: #fff;}
+.grid-view table.items tr.odd{ background-color:#EEE; }  /*#E3EFFF; blue jg*/
+
+/* skyblue (border bottom)------------------------------------------------------*/
+.grid-view table.items td	{
+/* 	height:auto; */	
+    font-family:Tahoma;
+	font-size:11px;
+	margin: 0px 0px 0px 0px;
+	padding: 0.3em;
+	
+	border-width: 0px 1px 0px 1px;
+	border-left: 1px solid white;
+	border-right: 1px solid #D6D6D6;
+}	
+
+/*----------------------------------------------- #ROW SELECTED -------------------------------------------------*/
+/*#default*/
+/*.grid-view table.items tbody tr:hover{ background: whitesmoke;}*/
+
+/*#orange*/   
+/*.grid-view table.items tr.selected{ background-color:#FFF1CC;}   orange bg*/
+.grid-view table.items tr.selected td { 
+	background-image:url(imgs/sky_blue_sel.png);
+	background-repeat:repeat-x;
+	background-position:center;
+	border-top:0px;
+	border-bottom:0px;
+	
+	/*padding-right:4px;
+	padding-left:4px;
+	padding-top:3px;
+    padding-bottom:3px;
+	height:auto; */
+	
+	/*kalo mo pake border di td*/
+/*	line-height: normal;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	overflow: hidden; */
+}
+
+
+/*----------------------------------------------- #OTHERS -------------------------------------------------*/
+
+/*#BUTTON COLUMN -------------------------*/
+/*default*/	/*
+.grid-view .link-column img{ border: 0; } 
+.grid-view .button-column{
+	text-align: center;
+	width: 60px;
+}
+.grid-view .button-column img{ border: 0; }
+.grid-view .checkbox-column{ width: 15px; }
+*/
+
+/*cutom border/padding button column */
+.grid-view table.items td.button-column{ 
+	border-left: 1px solid lightgrey; 
+	padding:0px 0px 0px 0px; 
+	}
+.grid-view .button-column{
+	text-align: center;
+	width: 60px;
+	/*background-color:#FFF1CC;*/
+}
+.grid-view .button-column img{ 
+	border: 1px solid lightgrey; vertical-align:middle; 
+	border-color : white Gray Gray white;
+		}
+.grid-view .checkbox-column{ width: 15px; }
+/*
+.grid-view .filters{
+	background: repeat-x 0 top;
+	background-image: url(imgs/column-header-bg.png);
+}	*/
+	
+.grid-view .filters input{ 
+	height:17px; border: 1px solid #ccc; 
+	width:100%; 
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	text-align:left;
+	/* -moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	-o-border-radius: 0;
+	-ms-border-radius: 0;
+	-khtml-border-radius: 0;
+	border-radius: 0; */
+	}
+
+.grid-view .filters select{
+	width: 100%;
+	border: 1px solid #ccc;
+}
+
+
+/*#DIV SUMMARY ERROR ----------------------------------------------*/
+/*default*/	/*
+.grid-view .summary{
+	margin: 0 0 5px 0;
+	text-align: right;
+}		*/
+
+/*cutom*/
+.grid-view .summary{
+	margin: 0 0 0px 0; padding:0px 0px 0px 0px;
+	text-align: right;
+	/*border: 1px solid lightgrey; */
+}
+
+/*#--------------------------------------------------------------------- DIV PAGER BOX -------------------------------------------------------------------------------*/
+/* .grid-view .pager{
+	margin: 5px 0 0 0;
+	text-align: right;
+}	 */
+
+/*MYcustom pager a (link,img)*/
+/*
+.grid-view .pager{
+	margin:0px 0px 0px 0px;
+	padding:5px 5px 5px 5px;
+	text-align: right;
+	font-size: 12px;
+	
+	border-left: 1px;
+	border-right: 1px ;
+	border-bottom: 1px ;
+	border-style:solid;
+	border-color:lightgrey;
+}
+
+.grid-view .pager a{
+	font-size: 10px;
+	padding:  0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	line-height: 18px;
+	
+	display: inline-block;
+	background-color: #fff;
+  -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+}
+.grid-view .pager ul{
+border: 1px solid red;
+padding:5px;
+}
+.grid-view .pager ul li{
+border: 1px solid yellow;
+padding:5px;
+}
+*/
+
+/* -------------------------------------------- rubah from bootstrap -----------------------
+.pagination ul > li > a,
+.pagination ul > li > span {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-left-width: 0;
+}
+/*
+
+.pager a,
+.pager span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+}
+
+.pager a:hover {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+
+.pager .next a,
+.pager .next span {
+  float: right;
+}
+
+.pager .previous a {
+  float: left;
+}
+
+.pager .disabled a,
+.pager .disabled a:hover,
+.pager .disabled span {
+  color: #999999;
+  cursor: default;
+  background-color: #fff;
+}
+*/
+

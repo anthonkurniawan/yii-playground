@@ -1,0 +1,130 @@
+# CARA BUAT AUTH FILE ( authManager )
+1. buat auth.txt sbg draf design auth lalu copy sbg auth.php. atau langsung buat auth.php
+	$ cp auth.txt auth.php
+	$ chmod a+w auth.php               _# make sure Apache can write to it_
+
+2. lalu terapkan pada controller yg akan di gunakan. contoh:
+	public function accessRules() {
+        return array(
+            array('allow', // allow readers only access to the view file
+                'actions'=>array('view'),
+                'roles'=>array('reader')
+            ),
+        );
+    }
+    ..
+3. Configur table user dengan add field ROLE jika lom ada
+4. Custom public function authenticate() pada UserIdentity.php. 
+	It is important to remember that it is good practice to check if a roles has already been assigned,
+	becuase Yii assignes roles and does not delete them until you call the revoke() function. 
+	In case you forget and try to re-assign a role Yii will return an error. 
+	Another important point is when you assign a role you must save it by calling Yii::app()->authManager->save();
+	Contoh :
+	
+	public function authenticate()
+	{
+    $user=User::model()->find('LOWER(username)=?',array(strtolower($this->username)));
+ 
+    if($user===null)
+        $this->errorCode=self::ERROR_USERNAME_INVALID;
+    else if(!$user->validatePassword($this->password))
+        $this->errorCode=self::ERROR_PASSWORD_INVALID;
+    else
+    {
+        $this->_id=$user->id;
+        $this->username=$user->username;
+        $auth=Yii::app()->authManager;
+        if(!$auth->isAssigned($user->role,$this->_id))
+        {
+            if($auth->assign($user->role,$this->_id))
+            {
+                Yii::app()->authManager->save();
+            }
+        }
+ 
+        $this->errorCode=self::ERROR_NONE;
+    }
+    return $this->errorCode==self::ERROR_NONE;
+}
+
+5. Configuring our main.php to use authManager to  initializes the authManager :
+	'components'=>array(
+        'authManager'=>array(
+            'class'=>'CPhpAuthManager',
+			//'authFile' => 'path'                  // only if necessary
+        ),
+	This basically activates the authorization Manager of the application and tells Yii that we want to use CPhpAuthManager class to take care of our accessControll. 
+	When you login Yii will assign a role to your user id. After you login open up the auth.php file and see that Yii has re-arranged it in the appropriate way.
+	
+	For Implement, sample :
+	<?php if(Yii::app()->user->checkAccess('commentor')): ?>
+ 
+    <h3>Leave a Comment</h3>
+            .........//your /commnet/_form here
+	<?php endif; ?>
+
+	Info:
+	When the user logs out we need to delete the assigned role otherwise if you change that user's role while he is offline and 
+	when he comes back and logs in again he will end up with two roles: the old one and the new one! 
+	So we place the below code in our logout action in the SiteController:
+	
+	public function actionLogout()
+	{
+    $assigned_roles = Yii::app()->authManager->getRoles(Yii::app()->user->id); //obtains all assigned roles for this user id
+    if(!empty($assigned_roles)) //checks that there are assigned roles
+    {
+        $auth=Yii::app()->authManager; //initializes the authManager
+        foreach($assigned_roles as $n=>$role)
+        {
+            if($auth->revoke($n,Yii::app()->user->id)) //remove each assigned role for this user
+                Yii::app()->authManager->save(); //again always save the result
+        }
+    }
+ 
+    Yii::app()->user->logout(); //logout the user
+    $this->redirect(Yii::app()->homeUrl); //redirect the user
+	}
+	
+# Additional/optional settings: 
+	In your auth.php file you can use the following parameters: - type => role,task,operation 
+	- description => describe the type 
+	- bizRule => apply business rule 
+	- data => used in the business rule 
+	- children => inherit other roles/tasks/operations
+
+The 'type' is represented by the following constants in the CAuthItem class:
+
+const TYPE_OPERATION=0;
+const TYPE_TASK=1;
+const TYPE_ROLE=2;
+
+
+
+<?php
+return array(
+    'tamu' => array (
+        '0'=>CAuthItem::TYPE_ROLE,
+        'description'=>'Can View Only',
+        'bizRule'=>'',
+        'data'=>''
+    ),
+	
+	 'pengguna' => array (
+        'type'=>CAuthItem::TYPE_ROLE,
+        'description'=>'Can Create',
+        'bizRule'=>'',
+        'data'=>''
+    ),
+	
+	 'pemilik' => array (
+        'type'=>CAuthItem::TYPE_ROLE,
+        'description'=>'have Full Access',
+		'children'=>array(
+            'tamu', 'pemakai'
+        ),
+        'bizRule'=>'',
+        'data'=>''
+    ),
+	
+);
+?>

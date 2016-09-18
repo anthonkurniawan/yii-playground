@@ -1,0 +1,6 @@
+<h1>head21</h1><br> 
+content html..
+<?php
+$x="test22"'
+echo $x;
+?>

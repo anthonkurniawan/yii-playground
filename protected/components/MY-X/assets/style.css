@@ -1,0 +1,51 @@
+/*--public $decorationCssClass='portlet-decoration';--*/
+.Mydecoration-portlet{  		/*header*/
+	padding: 3px 8px;
+	background: #000099; /*biru aj*/
+	border-left: 0px solid #6FACCF;
+}
+/*--Header Title--*/
+.Mytitle-portlet{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	color:#fff; 
+}
+
+/*----public $contentCssClass='portlet-content';-----*/
+.Mycontent-portlet {
+	margin: 0px;
+	padding: 0px;
+	background:#EFFDFF;
+}
+.Mycontent-portlet ul{
+
+}
+.Mycontent-portlet li{
+	margin-left:5px;
+	font-size: 12px;
+	text-decoration: none;
+	list-style-type: none; 
+	padding:2px;
+}
+
+/*----------------- CLASS OPERATION (CONTENT MENU)-----------------*/
+.Myoperations { }
+.Myoperations li{ }
+.Myoperations li span{
+	font-size: 12px;
+	color: #000099;
+	font-weight:bold;
+}
+.Myoperations li a{
+padding:2px;
+	text-decoration:none; 
+	display:block; 
+	color: #0066A4;
+}
+.Myoperations li a:visited{color: #0066A4;}
+.Myoperations li a:hover{
+	/*background: #80CFFF;*/
+	color:#fff; background:#e60;
+}

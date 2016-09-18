@@ -1,0 +1,55 @@
+
+.myPortlet
+{
+	-moz-border-radius:7px;
+	font-size:0.9em;
+	margin: 0;
+	padding: 3px;
+	margin-bottom:15px;
+	background-color:#EEE;
+}
+
+.myPortlet .myPortlet-header
+{
+	color:#555;
+	font-size:1.2em;
+	font-weight:bold;
+	line-height:1;
+	padding:5px 10px 6px;
+	margin: 0;
+	text-align:center;
+}
+
+.myPortlet .myPortlet-content
+{
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-bottomright:5px;
+	background:#F5F5F5;
+	padding:5px 5px 10px 5px;
+}
+
+.myPortlet ul, .myPortlet ol
+{
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin: 0 0 0 5px;
+	padding: 0;
+}
+
+.myPortlet li
+{
+	padding: 2px 0 4px 0px;
+}
+
+.myPortlet .row
+{
+	margin: 0 0 5px 0;
+}
+
+.myPortlet .row .hint
+{
+	margin: 0;
+	padding: 0;
+	color: #999;
+}

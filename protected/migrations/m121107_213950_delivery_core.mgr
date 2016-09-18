@@ -1,0 +1,132 @@
+<?php
+/**
+ * m121107_213950_delivery_core class
+ *
+ * PHP version 5
+ *
+ * @category   Packages
+ * @package    Module.delivery
+ * @subpackage Module.delivery.data
+ * @author     Evgeniy Marilev <marilev@jviba.com>
+ * @license    http://www.gnu.org/licenses/lgpl.html LGPL
+ * @link       https://jviba.com/display/PhpDoc
+ */
+/**
+ * m121107_213950_delivery_core is the database migration class
+ * which applies changes in database which required for basic
+ * delivery functionality
+ *
+ * PHP version 5
+ *
+ * @category   Packages
+ * @package    Module.delivery
+ * @subpackage Module.delivery.data
+ * @author     Evgeniy Marilev <marilev@jviba.com>
+ * @license    http://www.gnu.org/licenses/lgpl.html LGPL
+ * @link       https://jviba.com/display/PhpDoc
+ */
+class m121107_213950_delivery_core extends DbMigration
+{
+    /**
+     * Process database upgrade under transaction
+     * 
+     * @return bool whether upgrade compelted successfully
+     */
+    public function safeUp()
+    {
+        $columns = array(
+            'id' => 'INT(11) UNSIGNED NOT NULL AUTO_INCREMENT',
+            'from_id' => 'INT(11) UNSIGNED NULL DEFAULT NULL',
+            'notification_id' => 'INT(11) UNSIGNED NOT NULL',
+            'priority' => 'INT(11) UNSIGNED NOT NULL',
+            'from_credentials' => 'TEXT',
+            'from_credentials_hash' => 'INT(11) UNSIGNED NULL DEFAULT NULL',
+            'PRIMARY KEY (`id`)'
+        );
+        $options = "ENGINE = InnoDB DEFAULT CHARACTER SET = utf8 COLLATE = utf8_general_ci";
+        $this->createTable('delivery', $columns, $options);
+        $this->createIndex('fk_delivery_notification', 'delivery', '`notification_id` ASC');
+        $this->addForeignKey('fk_delivery_notification', 'delivery', 'notification_id', 'notification', 'id', 'NO ACTION', 'NO ACTION');
+        $this->createIndex('from_credentials_hash', 'delivery', '`from_credentials_hash` ASC');
+        $this->createIndex('fk_delivery_priority_idx', 'delivery', 'priority');
+        $this->addForeignKey('fk_delivery_from', 'delivery', 'from_id', 'user', 'id', 'NO ACTION', 'NO ACTION');
+        
+        $columns = array(
+            'delivery_id' => 'INT(11) UNSIGNED NOT NULL',
+            'user_id' => 'INT(11) UNSIGNED NULL DEFAULT NULL',
+            'channel' => 'INT(11) UNSIGNED NOT NULL DEFAULT 1',
+            'send_time' => 'TIMESTAMP NULL DEFAULT NULL',
+            'credentials' => 'TEXT',
+            'credentials_hash' => 'INT(11) UNSIGNED NULL DEFAULT NULL',
+            'PRIMARY KEY (`delivery_id`, `credentials_hash`, `channel`)',
+        );
+        $options = "ENGINE = InnoDB DEFAULT CHARACTER SET = utf8 COLLATE = utf8_general_ci";
+        $this->createTable('delivery_recipient', $columns, $options);
+        $this->createIndex('fk_delivery_recipient_delivery', 'delivery_recipient', '`delivery_id` ASC');
+        $this->createIndex('credentials_hash', 'delivery_recipient', '`user_id` ASC');
+        $this->createIndex('fk_delivery_channel_idx', 'delivery_recipient', 'channel');
+        $this->createIndex('fk_delivery_send_time_idx', 'delivery_recipient', 'send_time');
+        $this->addForeignKey('fk_delivery_recipient_delivery', 'delivery_recipient', 'delivery_id', 'delivery', 'id', 'NO ACTION', 'NO ACTION');
+        $this->addForeignKey('fk_delivery_recipient_user', 'delivery_recipient', 'user_id', 'user', 'id', 'NO ACTION', 'NO ACTION');
+        
+        $columns = array(
+            'id' => 'INT(11) UNSIGNED NOT NULL AUTO_INCREMENT',
+            'delivery_id' => 'INT(11) UNSIGNED NOT NULL',
+            'file_id' => 'INT(11) UNSIGNED NOT NULL',
+            'name' => 'VARCHAR(512) NULL DEFAULT NULL',
+            'PRIMARY KEY (`id`)',
+        );
+        $options = "ENGINE = InnoDB DEFAULT CHARACTER SET = utf8 COLLATE = utf8_general_ci";
+        $this->createTable('delivery_attachment', $columns, $options);
+        $this->createIndex('fk_notification_attachment_delivery', 'delivery_attachment', '`delivery_id` ASC');
+        $this->createIndex('fk_notification_attachment_file', 'delivery_attachment', '`file_id` ASC');
+        $this->addForeignKey('fk_notification_attachment_delivery', 'delivery_attachment', 'delivery_id', 'delivery', 'id', 'NO ACTION', 'NO ACTION');
+        if ($this->isTableExists('file')) {
+            $this->addForeignKey('fk_notification_attachment_file', 'delivery_attachment', 'file_id', 'file', 'id', 'NO ACTION', 'NO ACTION');
+        } else {
+            echo "    > Can't find table 'file'. Foreign key creation skipped for table 'delivery_attachment'!!!\n";
+        }
+  
+        $columns = array(
+            'id' => 'INT(11) UNSIGNED NOT NULL AUTO_INCREMENT',
+            'notification_id' => 'INT(11) UNSIGNED NOT NULL',
+            'subject' => 'VARCHAR(256) NOT NULL',
+            'text' => 'TEXT NOT NULL',
+            'PRIMARY KEY (`id`)',
+        );
+        $options = "ENGINE = InnoDB DEFAULT CHARACTER SET = utf8 COLLATE = utf8_general_ci";
+        $this->createTable('notification_static', $columns, $options);
+        $this->createIndex('fk_notification_static_notification', 'notification_static', '`notification_id` ASC');
+        $this->addForeignKey('fk_notification_static_notification', 'notification_static', 'notification_id', 'notification', 'id', 'NO ACTION', 'NO ACTION');
+    }
+    
+    /**
+     * Process database downgrade under transaction
+     * 
+     * @return bool whether downgrade compelted successfully
+     */
+    public function safeDown()
+    {
+        $this->dropForeignKey('fk_notification_static_notification', 'notification_static');
+        $this->dropIndex('fk_notification_static_notification', 'notification_static');
+        $this->dropTable('notification_static');
+        
+        $this->dropForeignKey('fk_notification_attachment_file', 'delivery_attachment');
+        $this->dropForeignKey('fk_notification_attachment_delivery', 'delivery_attachment');
+        $this->dropIndex('fk_notification_attachment_delivery', 'delivery_attachment');
+        $this->dropIndex('fk_notification_attachment_file', 'delivery_attachment');
+        $this->dropTable('delivery_attachment');
+        
+        $this->dropForeignKey('fk_delivery_recipient_delivery', 'delivery_recipient');
+        $this->dropForeignKey('fk_delivery_recipient_user', 'delivery_recipient');
+        $this->dropIndex('fk_delivery_recipient_delivery', 'delivery_recipient');
+        $this->dropIndex('fk_delivery_recipient_user', 'delivery_recipient');
+        $this->dropTable('delivery_recipient');
+        
+        $this->dropForeignKey('fk_delivery_from', 'delivery');
+        $this->dropForeignKey('fk_delivery_notification', 'delivery');
+        $this->dropIndex('fk_delivery_from', 'delivery');
+        $this->dropIndex('fk_delivery_notification', 'delivery');
+        $this->dropTable('delivery');
+    }
+}

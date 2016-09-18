@@ -1,0 +1,818 @@
+CActiveDataProvider Object
+(
+    [modelClass] => TblUserMysql
+    [model] => TblUserMysql Object
+        (
+            [_md:private] => CActiveRecordMetaData Object
+                (
+                    [tableSchema] => CMysqlTableSchema Object
+                        (                   
+                            [columns] => Array
+                                (
+                                    [id] => CMysqlColumnSchema Object
+                                        (
+                                            [name] => id
+                                            [rawName] => `id`
+                                            [allowNull] => 
+                                            [dbType] => int(11)
+                                            [type] => integer
+                                            [defaultValue] => 
+                                            [size] => 11
+                                            [precision] => 11
+                                            [scale] => 
+                                            [isPrimaryKey] => 1
+                                            [isForeignKey] => 
+                                            [autoIncrement] => 1
+                                            [_e:private] => 
+                                            [_m:private] => 
+                                        )
+
+                                    [username] => CMysqlColumnSchema Object
+                                        (
+                                        )
+
+                                    [password] => CMysqlColumnSchema Object
+                                        (
+                                        )
+
+                                    [email] => CMysqlColumnSchema Object
+                                        (
+                                        )
+
+                                    [first_name] => CMysqlColumnSchema Object
+                                        (
+                                        )
+
+                                    [role] => CMysqlColumnSchema Object
+                                        (
+                                        )
+
+                                )
+
+                            [_e:private] => 
+                            [_m:private] => 
+                        )
+
+                    [columns] => Array
+                        (
+                            [id] => CMysqlColumnSchema Object
+                                (
+                                )
+
+                            [username] => CMysqlColumnSchema Object
+                                (
+                                )
+
+                            [password] => CMysqlColumnSchema Object
+                                (
+                                )
+
+                            [email] => CMysqlColumnSchema Object
+                                (
+                                )
+
+                            [first_name] => CMysqlColumnSchema Object
+                                (
+                                )
+
+                            [role] => CMysqlColumnSchema Object
+                                (
+                                )
+
+                        )
+
+                    [relations] => Array
+                        (
+                            [TblData] => CHasManyRelation Object
+                                (
+                                    [limit] => -1
+                                    [offset] => -1
+                                    [index] => 
+                                    [through] => 
+                                    [joinType] => LEFT OUTER JOIN
+                                    [on] => 
+                                    [alias] => 
+                                    [with] => Array
+                                        (
+                                        )
+
+                                    [together] => 
+                                    [name] => TblData
+                                    [className] => TblData
+                                    [foreignKey] => id
+                                    [select] => *
+                                    [condition] => 
+                                    [params] => Array
+                                        (
+                                        )
+
+                                    [group] => 
+                                    [join] => 
+                                    [having] => 
+                                    [order] => 
+                                    [_e:private] => 
+                                    [_m:private] => 
+                                )
+
+                        )
+
+                    [attributeDefaults] => Array
+                        (
+                        )
+
+                    [_model:private] => TblUserMysql Object
+ *RECURSION*
+                )
+
+            [_new:private] => 
+            [_attributes:private] => Array
+                (
+                )
+
+            [_related:private] => Array
+                (
+                )
+
+            [_c:private] => 
+            [_pk:private] => 
+            [_alias:private] => t
+            [_errors:private] => Array
+                (
+                )
+
+            [_validators:private] => 
+            [_scenario:private] => 
+            [_e:private] => 
+            [_m:private] => 
+        )
+
+    [keyAttribute] => 
+    [_criteria:private] => CDbCriteria Object
+        (
+            [select] => *
+            [distinct] => 
+            [condition] => t.id=1
+            [params] => Array
+                (
+                )
+
+            [limit] => -1
+            [offset] => -1
+            [order] => t.id DESC
+            [group] => 
+            [join] => JOIN tbl_data AS tu ON ( t.id = tu.id ) 
+            [having] => 
+            [with] => TblData
+            [alias] => 
+            [together] => 
+            [index] => 
+            [scopes] => 
+            [_e:private] => 
+            [_m:private] => 
+        )
+
+    [_id:private] => TblUserMysql
+    [_data:private] => Array
+        (
+            [0] => TblUserMysql Object
+                (
+                    [_md:private] => CActiveRecordMetaData Object
+                        (
+                            [tableSchema] => CMysqlTableSchema Object
+                                (
+                                        (
+                                        )
+
+                                    [columns] => Array
+                                        (
+                                            [id] => CMysqlColumnSchema Object
+                                                (
+                                                    [name] => id
+                                                    [rawName] => `id`
+                                                    [allowNull] => 
+                                                    [dbType] => int(11)
+                                                    [type] => integer
+                                                    [defaultValue] => 
+                                                    [size] => 11
+                                                    [precision] => 11
+                                                    [scale] => 
+                                                    [isPrimaryKey] => 1
+                                                    [isForeignKey] => 
+                                                    [autoIncrement] => 1
+                                                    [_e:private] => 
+                                                    [_m:private] => 
+                                                )
+
+                                            [username] => CMysqlColumnSchema Object
+                                                (
+                                                    [name] => username
+                                                    [rawName] => `username`
+                                                    [allowNull] => 
+                                                    [dbType] => varchar(50)
+                                                    [type] => string
+                                                    [defaultValue] => 
+                                                    [size] => 50
+                                                    [precision] => 50
+                                                    [scale] => 
+                                                    [isPrimaryKey] => 
+                                                    [isForeignKey] => 
+                                                    [autoIncrement] => 
+                                                    [_e:private] => 
+                                                    [_m:private] => 
+                                                )
+
+                                            [password] => CMysqlColumnSchema Object
+                                                (
+                                                    [name] => password
+                                                    [rawName] => `password`
+                                                    [allowNull] => 
+                                                    [dbType] => varchar(50)
+                                                    [type] => string
+                                                    [defaultValue] => 
+                                                    [size] => 50
+                                                    [precision] => 50
+                                                    [scale] => 
+                                                    [isPrimaryKey] => 
+                                                    [isForeignKey] => 
+                                                    [autoIncrement] => 
+                                                    [_e:private] => 
+                                                    [_m:private] => 
+                                                )
+
+                                            [email] => CMysqlColumnSchema Object
+                                                (
+                                                    [name] => email
+                                                    [rawName] => `email`
+                                                    [allowNull] => 
+                                                    [dbType] => varchar(50)
+                                                    [type] => string
+                                                    [defaultValue] => 
+                                                    [size] => 50
+                                                    [precision] => 50
+                                                    [scale] => 
+                                                    [isPrimaryKey] => 
+                                                    [isForeignKey] => 
+                                                    [autoIncrement] => 
+                                                    [_e:private] => 
+                                                    [_m:private] => 
+                                                )
+
+                                            [first_name] => CMysqlColumnSchema Object
+                                                (
+                                                    [name] => first_name
+                                                    [rawName] => `first_name`
+                                                    [allowNull] => 
+                                                    [dbType] => varchar(50)
+                                                    [type] => string
+                                                    [defaultValue] => 
+                                                    [size] => 50
+                                                    [precision] => 50
+                                                    [scale] => 
+                                                    [isPrimaryKey] => 
+                                                    [isForeignKey] => 
+                                                    [autoIncrement] => 
+                                                    [_e:private] => 
+                                                    [_m:private] => 
+                                                )
+
+                                            [role] => CMysqlColumnSchema Object
+                                                (
+                                                    [name] => role
+                                                    [rawName] => `role`
+                                                    [allowNull] => 
+                                                    [dbType] => int(2)
+                                                    [type] => integer
+                                                    [defaultValue] => 
+                                                    [size] => 2
+                                                    [precision] => 2
+                                                    [scale] => 
+                                                    [isPrimaryKey] => 
+                                                    [isForeignKey] => 
+                                                    [autoIncrement] => 
+                                                    [_e:private] => 
+                                                    [_m:private] => 
+                                                )
+
+                                        )
+
+                                    [_e:private] => 
+                                    [_m:private] => 
+                                )
+
+                            [columns] => Array
+                                (
+                                    [id] => CMysqlColumnSchema Object
+                                        (
+                                            [name] => id
+                                            [rawName] => `id`
+                                            [allowNull] => 
+                                            [dbType] => int(11)
+                                            [type] => integer
+                                            [defaultValue] => 
+                                            [size] => 11
+                                            [precision] => 11
+                                            [scale] => 
+                                            [isPrimaryKey] => 1
+                                            [isForeignKey] => 
+                                            [autoIncrement] => 1
+                                            [_e:private] => 
+                                            [_m:private] => 
+                                        )
+
+                                    [username] => CMysqlColumnSchema Object
+                                        (
+                                            [name] => username
+                                            [rawName] => `username`
+                                            [allowNull] => 
+                                            [dbType] => varchar(50)
+                                            [type] => string
+                                            [defaultValue] => 
+                                            [size] => 50
+                                            [precision] => 50
+                                            [scale] => 
+                                            [isPrimaryKey] => 
+                                            [isForeignKey] => 
+                                            [autoIncrement] => 
+                                            [_e:private] => 
+                                            [_m:private] => 
+                                        )
+
+                                    [password] => CMysqlColumnSchema Object
+                                        (
+                                            [name] => password
+                                            [rawName] => `password`
+                                            [allowNull] => 
+                                            [dbType] => varchar(50)
+                                            [type] => string
+                                            [defaultValue] => 
+                                            [size] => 50
+                                            [precision] => 50
+                                            [scale] => 
+                                            [isPrimaryKey] => 
+                                            [isForeignKey] => 
+                                            [autoIncrement] => 
+                                            [_e:private] => 
+                                            [_m:private] => 
+                                        )
+
+                                    [email] => CMysqlColumnSchema Object
+                                        (
+                                            [name] => email
+                                            [rawName] => `email`
+                                            [allowNull] => 
+                                            [dbType] => varchar(50)
+                                            [type] => string
+                                            [defaultValue] => 
+                                            [size] => 50
+                                            [precision] => 50
+                                            [scale] => 
+                                            [isPrimaryKey] => 
+                                            [isForeignKey] => 
+                                            [autoIncrement] => 
+                                            [_e:private] => 
+                                            [_m:private] => 
+                                        )
+
+                                    [first_name] => CMysqlColumnSchema Object
+                                        (
+                                            [name] => first_name
+                                            [rawName] => `first_name`
+                                            [allowNull] => 
+                                            [dbType] => varchar(50)
+                                            [type] => string
+                                            [defaultValue] => 
+                                            [size] => 50
+                                            [precision] => 50
+                                            [scale] => 
+                                            [isPrimaryKey] => 
+                                            [isForeignKey] => 
+                                            [autoIncrement] => 
+                                            [_e:private] => 
+                                            [_m:private] => 
+                                        )
+
+                                    [role] => CMysqlColumnSchema Object
+                                        (
+                                            [name] => role
+                                            [rawName] => `role`
+                                            [allowNull] => 
+                                            [dbType] => int(2)
+                                            [type] => integer
+                                            [defaultValue] => 
+                                            [size] => 2
+                                            [precision] => 2
+                                            [scale] => 
+                                            [isPrimaryKey] => 
+                                            [isForeignKey] => 
+                                            [autoIncrement] => 
+                                            [_e:private] => 
+                                            [_m:private] => 
+                                        )
+
+                                )
+
+                            [relations] => Array
+                                (
+                                    [TblData] => CHasManyRelation Object
+                                        (
+                                            [limit] => -1
+                                            [offset] => -1
+                                            [index] => 
+                                            [through] => 
+                                            [joinType] => LEFT OUTER JOIN
+                                            [on] => 
+                                            [alias] => 
+                                            [with] => Array
+                                                (
+                                                )
+
+                                            [together] => 
+                                            [name] => TblData
+                                            [className] => TblData
+                                            [foreignKey] => id
+                                            [select] => *
+                                            [condition] => 
+                                            [params] => Array
+                                                (
+                                                )
+
+                                            [group] => 
+                                            [join] => 
+                                            [having] => 
+                                            [order] => 
+                                            [_e:private] => 
+                                            [_m:private] => 
+                                        )
+
+                                )
+
+                            [attributeDefaults] => Array
+                                (
+                                )
+
+                            [_model:private] => TblUserMysql Object
+                                (
+                                    [_md:private] => CActiveRecordMetaData Object
+ *RECURSION*
+                                    [_new:private] => 
+                                    [_attributes:private] => Array
+                                        (
+                                        )
+
+                                    [_related:private] => Array
+                                        (
+                                        )
+
+                                    [_c:private] => 
+                                    [_pk:private] => 
+                                    [_alias:private] => t
+                                    [_errors:private] => Array
+                                        (
+                                        )
+
+                                    [_validators:private] => 
+                                    [_scenario:private] => 
+                                    [_e:private] => 
+                                    [_m:private] => 
+                                )
+
+                        )
+
+                    [_new:private] => 
+                    [_attributes:private] => Array
+                        (
+                            [id] => 1
+                            [username] => admin
+                            [password] => admin
+                            [email] => admin@admin123
+                            [first_name] => adm111
+                            [role] => 1
+                        )
+
+                    [_related:private] => Array
+                        (
+                            [TblData] => Array
+                                (
+                                    [0] => TblData Object
+                                        (
+                                            [_md:private] => CActiveRecordMetaData Object
+                                                (
+                                                    [tableSchema] => CMysqlTableSchema Object
+                                                        (
+                                                            [schemaName] => 
+                                                            [name] => tbl_data
+                                                            [rawName] => `tbl_data`
+                                                            [primaryKey] => id
+                                                            [sequenceName] => 
+                                                            [foreignKeys] => Array
+                                                                (
+                                                                )
+
+                                                            [columns] => Array
+                                                                (
+                                                                    [id] => CMysqlColumnSchema Object
+                                                                        (
+                                                                            [name] => id
+                                                                            [rawName] => `id`
+                                                                            [allowNull] => 
+                                                                            [dbType] => int(11)
+                                                                            [type] => integer
+                                                                            [defaultValue] => 
+                                                                            [size] => 11
+                                                                            [precision] => 11
+                                                                            [scale] => 
+                                                                            [isPrimaryKey] => 1
+                                                                            [isForeignKey] => 
+                                                                            [autoIncrement] => 
+                                                                            [_e:private] => 
+                                                                            [_m:private] => 
+                                                                        )
+
+                                                                    [propic_id] => CMysqlColumnSchema Object
+                                                                        (
+                                                                            [name] => propic_id
+                                                                            [rawName] => `propic_id`
+                                                                            [allowNull] => 1
+                                                                            [dbType] => varchar(50)
+                                                                            [type] => string
+                                                                            [defaultValue] => 
+                                                                            [size] => 50
+                                                                            [precision] => 50
+                                                                            [scale] => 
+                                                                            [isPrimaryKey] => 
+                                                                            [isForeignKey] => 
+                                                                            [autoIncrement] => 
+                                                                            [_e:private] => 
+                                                                            [_m:private] => 
+                                                                        )
+
+                                                                    [ket] => CMysqlColumnSchema Object
+                                                                        (
+                                                                            [name] => ket
+                                                                            [rawName] => `ket`
+                                                                            [allowNull] => 
+                                                                            [dbType] => varchar(255)
+                                                                            [type] => string
+                                                                            [defaultValue] => 
+                                                                            [size] => 255
+                                                                            [precision] => 255
+                                                                            [scale] => 
+                                                                            [isPrimaryKey] => 
+                                                                            [isForeignKey] => 
+                                                                            [autoIncrement] => 
+                                                                            [_e:private] => 
+                                                                            [_m:private] => 
+                                                                        )
+
+                                                                )
+
+                                                            [_e:private] => 
+                                                            [_m:private] => 
+                                                        )
+
+                                                    [columns] => Array
+                                                        (
+                                                            [id] => CMysqlColumnSchema Object
+                                                                (
+                                                                    [name] => id
+                                                                    [rawName] => `id`
+                                                                    [allowNull] => 
+                                                                    [dbType] => int(11)
+                                                                    [type] => integer
+                                                                    [defaultValue] => 
+                                                                    [size] => 11
+                                                                    [precision] => 11
+                                                                    [scale] => 
+                                                                    [isPrimaryKey] => 1
+                                                                    [isForeignKey] => 
+                                                                    [autoIncrement] => 
+                                                                    [_e:private] => 
+                                                                    [_m:private] => 
+                                                                )
+
+                                                            [propic_id] => CMysqlColumnSchema Object
+                                                                (
+                                                                    [name] => propic_id
+                                                                    [rawName] => `propic_id`
+                                                                    [allowNull] => 1
+                                                                    [dbType] => varchar(50)
+                                                                    [type] => string
+                                                                    [defaultValue] => 
+                                                                    [size] => 50
+                                                                    [precision] => 50
+                                                                    [scale] => 
+                                                                    [isPrimaryKey] => 
+                                                                    [isForeignKey] => 
+                                                                    [autoIncrement] => 
+                                                                    [_e:private] => 
+                                                                    [_m:private] => 
+                                                                )
+
+                                                            [ket] => CMysqlColumnSchema Object
+                                                                (
+                                                                    [name] => ket
+                                                                    [rawName] => `ket`
+                                                                    [allowNull] => 
+                                                                    [dbType] => varchar(255)
+                                                                    [type] => string
+                                                                    [defaultValue] => 
+                                                                    [size] => 255
+                                                                    [precision] => 255
+                                                                    [scale] => 
+                                                                    [isPrimaryKey] => 
+                                                                    [isForeignKey] => 
+                                                                    [autoIncrement] => 
+                                                                    [_e:private] => 
+                                                                    [_m:private] => 
+                                                                )
+
+                                                        )
+
+                                                    [relations] => Array
+                                                        (
+                                                            [TblPic] => CHasManyRelation Object
+                                                                (
+                                                                    [limit] => -1
+                                                                    [offset] => -1
+                                                                    [index] => 
+                                                                    [through] => 
+                                                                    [joinType] => LEFT OUTER JOIN
+                                                                    [on] => 
+                                                                    [alias] => 
+                                                                    [with] => Array
+                                                                        (
+                                                                        )
+
+                                                                    [together] => 
+                                                                    [name] => TblPic
+                                                                    [className] => TblPic
+                                                                    [foreignKey] => pic_id
+                                                                    [select] => *
+                                                                    [condition] => 
+                                                                    [params] => Array
+                                                                        (
+                                                                        )
+
+                                                                    [group] => 
+                                                                    [join] => 
+                                                                    [having] => 
+                                                                    [order] => 
+                                                                    [_e:private] => 
+                                                                    [_m:private] => 
+                                                                )
+
+                                                            [TblUserMysql] => CBelongsToRelation Object
+                                                                (
+                                                                    [joinType] => LEFT OUTER JOIN
+                                                                    [on] => 
+                                                                    [alias] => 
+                                                                    [with] => Array
+                                                                        (
+                                                                        )
+
+                                                                    [together] => 
+                                                                    [name] => TblUserMysql
+                                                                    [className] => TblUserMysql
+                                                                    [foreignKey] => id
+                                                                    [select] => *
+                                                                    [condition] => 
+                                                                    [params] => Array
+                                                                        (
+                                                                        )
+
+                                                                    [group] => 
+                                                                    [join] => 
+                                                                    [having] => 
+                                                                    [order] => 
+                                                                    [_e:private] => 
+                                                                    [_m:private] => 
+                                                                )
+
+                                                        )
+
+                                                    [attributeDefaults] => Array
+                                                        (
+                                                        )
+
+                                                    [_model:private] => TblData Object
+                                                        (
+                                                            [_md:private] => CActiveRecordMetaData Object
+ *RECURSION*
+                                                            [_new:private] => 
+                                                            [_attributes:private] => Array
+                                                                (
+                                                                )
+
+                                                            [_related:private] => Array
+                                                                (
+                                                                )
+
+                                                            [_c:private] => 
+                                                            [_pk:private] => 
+                                                            [_alias:private] => t
+                                                            [_errors:private] => Array
+                                                                (
+                                                                )
+
+                                                            [_validators:private] => 
+                                                            [_scenario:private] => 
+                                                            [_e:private] => 
+                                                            [_m:private] => 
+                                                        )
+
+                                                )
+
+                                            [_new:private] => 
+                                            [_attributes:private] => Array
+                                                (
+                                                    [id] => 1
+                                                    [propic_id] => propic1
+                                                    [ket] => 
+                                                )
+
+                                            [_related:private] => Array
+                                                (
+                                                )
+
+                                            [_c:private] => 
+                                            [_pk:private] => 1
+                                            [_alias:private] => t
+                                            [_errors:private] => Array
+                                                (
+                                                )
+
+                                            [_validators:private] => 
+                                            [_scenario:private] => update
+                                            [_e:private] => 
+                                            [_m:private] => 
+                                        )
+
+                                )
+
+                        )
+
+                    [_c:private] => 
+                    [_pk:private] => 1
+                    [_alias:private] => t
+                    [_errors:private] => Array
+                        (
+                        )
+
+                    [_validators:private] => 
+                    [_scenario:private] => update
+                    [_e:private] => 
+                    [_m:private] => 
+                )
+
+        )
+
+    [_keys:private] => Array
+        (
+            [0] => 1
+        )
+
+    [_totalItemCount:private] => 1
+    [_sort:private] => CSort Object
+        (
+            [multiSort] => 
+            [modelClass] => TblUserMysql
+            [attributes] => Array
+                (
+                )
+
+            [sortVar] => TblUserMysql_sort
+            [descTag] => desc
+            [defaultOrder] => 
+            [route] => 
+            [separators] => Array
+                (
+                    [0] => -
+                    [1] => .
+                )
+
+            [params] => 
+            [_directions:private] => Array
+                (
+                )
+
+            [_e:private] => 
+            [_m:private] => 
+        )
+
+    [_pagination:private] => CPagination Object
+        (
+            [pageVar] => TblUserMysql_page
+            [route] => 
+            [params] => 
+            [validateCurrentPage] => 1
+            [_pageSize:private] => 10
+            [_itemCount:private] => 1
+            [_currentPage:private] => 0
+            [_e:private] => 
+            [_m:private] => 
+        )
+
+    [_e:private] => 
+    [_m:private] => 
+)
+    

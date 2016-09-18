@@ -1,0 +1,25 @@
+<?php
+return array (
+  0 => 
+  array (
+    'type' => 2,
+    'description' => 'View Only',
+    'bizRule' => '',
+    'data' => '',
+  ),
+  1 => 
+  array (
+    'type' => 2,
+    'description' => 'Full Access',
+    'bizRule' => '',
+    'data' => '',
+    'assignments' => 
+    array (
+      1 => 
+      array (
+        'bizRule' => NULL,
+        'data' => NULL,
+      ),
+    ),
+  ),
+);

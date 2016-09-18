@@ -1,0 +1,132 @@
+.grid-view .pager{		 /*-- CUSTOM --*/
+	border-top: 3px; /*XXXXXXXXXX*/
+	border-left: 1px;
+	border-right: 1px ;
+	border-bottom: 1px ;
+	border-style:solid;
+	border-color:lightgrey;
+	
+	height:auto;
+	margin:0px 0px 0px 0px;
+	padding:2px 5px 2px 10px;
+	
+	text-align: right;
+	font-size: 10px;  /*txt go to page */
+	
+	/*background-image: url(imgs/column-header-bg.png);  --silver metalic */
+	/*border-color: #99bce8;
+	background-image: none;
+	background-color: #d3e1f1;
+	background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#dfe9f5),color-stop(100%,#d3e1f1));
+	background-image: -webkit-linear-gradient(top,#dfe9f5,#d3e1f1);
+	background-image: -moz-linear-gradient(top,#dfe9f5,#d3e1f1);
+	background-image: -o-linear-gradient(top,#dfe9f5,#d3e1f1);
+	background-image: -ms-linear-gradient(top,#dfe9f5,#d3e1f1);
+	background-image: linear-gradient(top,#dfe9f5,#d3e1f1)*/
+	
+	/*background-image: url(../../images/tableItem/toolbar-default-bg.gif)!important;
+	background-repeat: repeat-x*/
+	
+	/*background-image:url(imgs/header_bg_60.gif); /*bole la*/
+	background-image:url(../jui/base/images/ui-bg_highlight-hard_80_d7ebf9_1x100.png); 
+}	
+
+/*------------- NO ELIPS BORDER (button)------------------*/
+.grid-view .pager a{
+	font-size: 9px;
+	padding:  0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	line-height: 13px;     /*BUTTON BORDER  NAV   XXXXXXXXXXXX*/
+	
+	display: inline-block;
+	background-color: #fff;
+  -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px; 
+}
+
+ul.yiiPager .first{ float:left; }
+.grid-view .pager .previous a { float: left; }
+ul.yiiPager .last{ float:right; }
+.grid-view .pager .next a{ float:right;   }
+
+ul.yiiPager .first,ul.yiiPager .last
+{
+	/*display:none; -------****default*/
+	display:inline;
+	line-height: normal;
+}
+
+/*---------------------------------------- DEFAULT ----------------------------------------*/
+
+.grid-view .pager ul li {
+padding:0px 0px 0px 0px;
+margin:0px 0px 0px 0px;
+/*border: 1px solid purple;*/
+}
+
+ul.yiiPager   /* group button 1,2.3.. */
+{
+	font-size:11px;
+	border:0;
+	margin:0;
+	padding:0px 10px 0px 0px;
+	margin:0px 0px 0px 0px;
+	line-height:100%;
+	display:inline;
+	
+	/*border: 1px solid red;  */
+}
+
+.grid-view .pager .first, .grid-view .pager .last, .next, .grid-view .pager .previous{   
+padding:0px 0px 0px 0px;
+margin:0px 0px 0px 0px;
+/*border: 1px solid blue; */
+}
+
+ul.yiiPager li{ display:inline;}
+ul.yiiPager a:link,
+ul.yiiPager a:visited
+{
+	/*border:solid 1px #9aafe5;*/
+	
+	border: 1px solid ligt;
+	border-color : white Gray Gray white;
+	/*background-Color:#D4D0C8;
+	margin:5px 0px 5px 0px ;
+	padding:5px 0px 5px 0px ;*/
+
+	background-image:url(imgs/sky_blue_grid.gif);
+	background-position:0px -1px\9;
+	
+	border-width: 1px 1px 1px 1px;
+	border-color : #FDFDFD #A4BED4 #A4BED4 #FDFDFD;
+	background-color:transparent;
+	
+	font-weight:bold;
+	color:#0e509e;
+	padding:1px 6px;
+	margin:0px 0px;
+	text-decoration:none;
+}
+
+
+ul.yiiPager .page a { font-weight:normal;}
+
+ul.yiiPager a:hover { border:solid 1px #0e509e;}
+
+ul.yiiPager .selected a
+{
+	background:#2e6ab1;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+ul.yiiPager .hidden a
+{
+	border:solid 1px #DEDEDE;
+	color:#888888;
+}
+
+
+

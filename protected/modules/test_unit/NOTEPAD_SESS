@@ -1,0 +1,13 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="0">
+            <File firstVisibleLine="45" xOffset="0" scrollWidth="631" startPos="2226" endPos="2226" selMode="0" lang="PHP" encoding="-1" filename="D:\WEB\HTDOCS\yiiProject\yiiTest\protected\modules\test_unit\Test_unitModule.php" />
+            <File firstVisibleLine="5" xOffset="0" scrollWidth="339" startPos="1108" endPos="1108" selMode="0" lang="PHP" encoding="-1" filename="D:\WEB\HTDOCS\yiiProject\yiiTest\protected\modules\test_unit\controllers\model_extController.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="682" startPos="311" endPos="311" selMode="0" lang="PHP" encoding="-1" filename="D:\WEB\HTDOCS\yiiProject\yiiTest\protected\modules\test_unit\views\model_ext\index.php" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="473" startPos="896" endPos="896" selMode="0" lang="PHP" encoding="-1" filename="D:\WEB\HTDOCS\yiiProject\yiiTest\protected\modules\test_unit\views\model_ext\_view.php" />
+        </mainView>
+        <subView activeIndex="0">
+            <File firstVisibleLine="38" xOffset="0" scrollWidth="639" startPos="2260" endPos="2260" selMode="0" lang="PHP" encoding="-1" filename="D:\WEB\HTDOCS\yiiProject\yiiTest\protected\modules\test_unit\views\layouts\main.php" />
+        </subView>
+    </Session>
+</NotepadPlus>

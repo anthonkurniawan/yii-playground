@@ -1,0 +1,337 @@
+/*------------------------------------------------- #BASE ------------------------------------------------------*/
+.grid-view-loading{background:url(loading.gif) no-repeat;}
+
+grid-view{
+	overflow:hidden;
+	text-align:center;
+	
+	/*border: 1px solid lightgrey;*/
+	padding: 15px 0; 
+	margin: 0px 0px 0px 0px;
+}
+/*div.grid-view{	border: 1px #D0E3EF solid; }	/*default border box div*/
+.grid-view .empty{ font-style: italic; }
+
+
+/*-------------------------------------------------- #TABLE----------------------------------------------------*/
+.grid-view table.items	 
+{
+	/*background: white;
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px #D0E3EF solid;*/
+	border-collapse:separate;border-spacing:1;   /* border for header(shadow separator*/
+	border: 1px #D0E3EF solid; /*XXXXXXXXXXXXXXXXX*/
+	margin: 0 0 0px 0;    /*ATUR BETWEEN DIV ("SUMMARY" - "TABLE" -"PAGER")*/
+	width: 100%;
+}
+
+/*-------------------------------------------------- #HEADER (cutom)-----------------------------------------------------*/
+/*.grid-view table.items th  /*th header default
+{
+	font-size: 0.9em;    (!! DEFAULT BAWAAN YII )
+	border: 1px white solid;
+	padding: 0.3em;
+	color: white;
+	background: url("bg.gif") repeat-x scroll left top white;
+	text-align: center;	
+}		*/
+.grid-view table.items th {
+	line-height:normal;
+	font-size:12px;
+	font-family:arial;
+	text-align:center;
+	padding: 0.3em;
+}
+
+.grid-view table.items th  /* default skin ---------*/
+{	/*
+	background-Color:#D4D0C8;
+	border: 1px solid;
+	border-color : white Gray Gray white;
+	text-align: center;
+	margin:0px;
+	padding:5px 0px 5px 0px ;
+	font-weight:normal;
+	-moz-user-select:none;    
+	-moz-user-select:-moz-none;    
+    overflow:hidden;
+    empty-cells:show;
+	white-space: nowrap;	*/
+}	
+
+/* 1xp skin ----------------*/
+.grid-view table.items th {
+	background-image:url('imgs/header_bg_60.gif');
+	border:0px;
+	margin:0px;
+	padding:5px 0px 5px 0px ;
+    -moz-user-select:none;
+    -moz-user-select:-moz-none;    
+    overflow:hidden;
+}
+
+/*----------------------------------------- #HEADER LINK /COLOR/SEPARATOR-----------------------------*/
+.grid-view table.items th a   /*default*/
+{
+	/*color: #EEE;
+	font-weight: bold;
+	text-decoration: none;*/
+	
+	color:#616161;
+	font-weight:bold;
+
+	font-family:Arial;
+	font-size:12px;
+	text-align: center;
+}
+
+/*---------- LINE SEPARATOR LINK (default ga di set)*/
+/*.grid-view table.items th a  
+{
+	border-left: 1px solid white;
+	border-right: 1px solid gray;
+	height:16px;
+}*/
+
+
+/*---------------------------------------------- #HOVER/ASC/DESC HEADER --------------------------------------------*/
+.grid-view table.items th a:hover{	color: #FFF;	}   /*default*/
+.grid-view table.items th a.asc{
+	background:url(icon_def/up.gif)  left no-repeat;
+	padding-left: 20px;
+}
+.grid-view table.items th a.desc{
+	background:url(icon_def/down.gif) left center no-repeat;
+	padding-left: 20px;
+}
+
+/*------------------------------------------------ #TABLE TD CONTENT/ROW ---------------------------------------------*/
+.grid-view table.items td		/*td skin default*/
+{
+/*	font-size: 0.9em;           ( bawaan yii)
+	border: 1px white solid;
+	padding: 0.3em;		*/
+	height:20px;
+    white-space: nowrap;
+	padding: 0.3em;	
+}
+
+/*----------------------------- #CUSTOM TD ---------------------------*/
+/*default*/
+/*.grid-view table.items td		{	border:1px;  }  
+.grid-view table.items tr.even{ background: #F8F8F8; }
+.grid-view table.items tr.odd{ background: #E5F1F4; }
+*/
+
+/* xp skin (border all)------------------------------------------------------*/
+/*
+.grid-view table.items td		
+{
+	border:0px;
+	border-bottom: 1px solid lightgrey;
+	border-right: 1px solid lightgrey;
+	font-family:Arial;
+	font-size:12px;
+    -moz-user-select:none;
+    -moz-user-select:-moz-none;    
+    overflow:hidden;
+    padding-top:0px;
+    padding-bottom:0px;	
+}
+.grid-view table.items tr.even{ background: white; }
+.grid-view table.items tr.odd{ background:  whitesmoke;}		
+*/
+/* mt skin (border bottom)------------------------------------------------------*/
+
+.grid-view table.items td	{
+	border:0px;
+	border-bottom: 1px solid lightgrey;
+	border-right: 0px solid lightgrey;
+	font-family:Verdana;
+	font-size:12px;
+    -moz-user-select:none;
+    -moz-user-select:-moz-none;    
+    overflow:hidden;
+    padding-top:0px;
+    padding-bottom:0px;
+}	
+
+
+/*----------------------------------------------- #ROW SELECTED -------------------------------------------------*/
+/*#default*/
+.grid-view table.items tr.selected{ background: whitesmoke; }
+/*.grid-view table.items tr.selected{ background: lightgrey; }   !!!hampir sama aj warnanya */
+
+.grid-view table.items tr.selected td { background-color: whitesmoke;  }
+.grid-view table.items tbody tr:hover{ background: whitesmoke;}
+
+/*#orange*/   /*
+.grid-view table.items tr.selected{ background-color:#FFF1CC;}   
+.grid-view table.items tr.selected td { 
+	background-color:#FFF1CC;
+	background-repeat:repeat-x;
+	background-position:0px 0px;	
+	background-image:url(imgs/sky_blue_sel.png);
+	
+	/*kalo mo pake border di td*/
+/*	line-height: normal;   
+	border-right: 1px solid #A4BED4;
+	background-color: #E3EFFF;
+	vertical-align: top;
+	padding: 0px;  
+}
+.grid-view table.items tbody tr:hover{ background: gray;}
+ */
+
+
+
+/*----------------------------------------------- #OTHERS -------------------------------------------------*/
+
+/*#BUTTON COLUMN -------------------------*/
+/*default*/	/*
+.grid-view .link-column img{ border: 0; } 
+.grid-view .button-column{
+	text-align: center;
+	width: 60px;
+}
+.grid-view .button-column img{ border: 0; }
+.grid-view .checkbox-column{ width: 15px; }
+*/
+
+/*cutom border/padding button column */
+.grid-view table.items td.button-column{ border-left: 1px solid lightgrey; padding:1px 1px 4px 1px }
+.grid-view .button-column{
+	text-align: center;
+	width: 60px;
+	border: 1px solid black;
+	background-color:#FFF1CC;
+}
+.grid-view .button-column img{ border: 1px solid lightgrey; }
+.grid-view .checkbox-column{ width: 15px; }
+
+
+.grid-view .filters input{ 
+	height:17px; border: 1px solid #ccc; width:100%; 
+
+	/* -moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	-o-border-radius: 0;
+	-ms-border-radius: 0;
+	-khtml-border-radius: 0;
+	border-radius: 0; */
+
+	/*box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box*/
+	}
+
+.grid-view .filters select{
+	width: 100%;
+	border: 1px solid #ccc;
+}
+
+
+/*#DIV SUMMARY ERROR ----------------------------------------------*/
+/*default*/	/*
+.grid-view .summary{
+	margin: 0 0 5px 0;
+	text-align: right;
+}		*/
+
+/*cutom*/
+.grid-view .summary{
+	margin: 0 0 0px 0; padding:0px 0px 0px 0px;
+	text-align: right;
+	/*border: 1px solid lightgrey; */
+}
+
+/*#DIV PAGER BOX*/
+/*.grid-view .pager{
+	margin: 5px 0 0 0;
+	text-align: right;
+}	*/
+.grid-view .pager{
+	margin:0px 0px 0px 0px;
+	padding:5px 5px 5px 5px;
+	text-align: right;
+	
+	font-size: 12px;
+	
+	border-left: 1px;
+	border-right: 1px ;
+	border-bottom: 1px ;
+	border-style:solid;
+	border-color:lightgrey;
+}
+
+/*MYcustom pager a (link,img)*/
+.grid-view .pager a{
+	font-size: 10px;
+	padding:  0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	line-height: 18px;
+	
+	display: inline-block;
+	/*background-color: #fff;*/
+	background-color: #fff;
+
+  -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+}
+.grid-view .pager ul{
+border: 1px solid red;
+padding:5px;
+}
+.grid-view .pager ul li{
+border: 1px solid yellow;
+padding:5px;
+}
+/*
+.pagination ul > li > a,
+.pagination ul > li > span {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-left-width: 0;
+}
+/*
+
+.pager a,
+.pager span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+}
+
+.pager a:hover {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+
+.pager .next a,
+.pager .next span {
+  float: right;
+}
+
+.pager .previous a {
+  float: left;
+}
+
+.pager .disabled a,
+.pager .disabled a:hover,
+.pager .disabled span {
+  color: #999999;
+  cursor: default;
+  background-color: #fff;
+}
+*/

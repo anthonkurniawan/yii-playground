@@ -1,0 +1,171 @@
+
+.x-panel2,.x-plain{ overflow: hidden; position: relative }	
+.x-panel-default-framed2
+{
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+	padding: 4px 4px 4px 4px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #dfe9f6;
+	
+	border-color: #99bce8;
+	overflow: hidden; position: relative ;
+	/*
+	padding: 0!important;
+	border-width: 0!important;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	-o-border-radius: 0;
+	-ms-border-radius: 0;
+	-khtml-border-radius: 0;
+	border-radius: 0;
+	background-color: transparent;
+	background-position: 1000404px 1000404px;
+	*/
+}
+.x-panel-header-default-framed2
+{
+	font-size: 11px;
+	border-color: #99bce8;
+	border-width: 1px;
+	border-style: solid;
+	background-image: none;
+	background-color: #cbddf3;
+	background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#dae7f6),color-stop(45%,#cddef3),color-stop(46%,#abc7ec),color-stop(50%,#abc7ec),color-stop(51%,#b8cfee),color-stop(100%,#cbddf3));
+	background-image: -webkit-linear-gradient(top,#dae7f6,#cddef3 45%,#abc7ec 46%,#abc7ec 50%,#b8cfee 51%,#cbddf3);
+	background-image: -moz-linear-gradient(top,#dae7f6,#cddef3 45%,#abc7ec 46%,#abc7ec 50%,#b8cfee 51%,#cbddf3);
+	background-image: -o-linear-gradient(top,#dae7f6,#cddef3 45%,#abc7ec 46%,#abc7ec 50%,#b8cfee 51%,#cbddf3);
+	background-image: -ms-linear-gradient(top,#dae7f6,#cddef3 45%,#abc7ec 46%,#abc7ec 50%,#b8cfee 51%,#cbddf3);
+	background-image: linear-gradient(top,#dae7f6,#cddef3 45%,#abc7ec 46%,#abc7ec 50%,#b8cfee 51%,#cbddf3);
+	-moz-box-shadow: #f4f8fd 0 1px 0 0 inset;
+	-webkit-box-shadow: #f4f8fd 0 1px 0 0 inset;
+	-o-box-shadow: #f4f8fd 0 1px 0 0 inset;
+	box-shadow: #f4f8fd 0 1px 0 0 inset
+}
+.x-panel-header-horizontal2
+{
+	padding: 3px 5px 4px;
+	width: 100%;
+}
+
+.x-docked2
+{
+	position: absolute!important;
+	z-index: 1
+}
+
+.x-box-inner2
+{
+	border-width: 0;
+	position: relative;
+	top: -1px;
+	
+	overflow: hidden;
+	zoom: 1;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.x-panel-header-text2
+{
+	user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	cursor: default;
+	white-space: nowrap;
+	
+	cursor: move;
+}
+.x-panel-header-text-default-framed2
+{
+	color: #04408c;
+	font-size: 11px;
+	font-weight: 700;
+	font-family: tahoma,arial,verdana,sans-serif;
+	line-height: 17px
+}
+
+.x-box-item2
+{
+	position: absolute!important;
+	left: 0;
+	top: 0
+}
+
+.x-tool-collapse-top2 {
+	background-position: 0 -255px;
+	background-position: -15px -255px;
+	background-position: 0 -210px;
+	
+}
+
+.x-panel-body-default
+{
+	background: #fff;
+	border-color: #99bce8;
+	color: #000;
+	border-width: 1px;
+	border-style: solid
+}
+
+.x-panel-body2 {
+	overflow: hidden;
+	position: relative;
+	font-size: 12px;
+	
+/*	background-color: #eaf1fb;
+	border-top: 1px solid #99bce8!important;
+	border-bottom: 1px solid #99bce8!important; */
+}
+
+.x-panel-body-default-framed2
+{
+	background: #dfe9f6;
+	border-color: #99bce8;
+	color: #000;
+	border-width: 0;
+	border-style: solid
+}
+
+.btn_close2{
+	background-image: url("../../css/ext_form/img/tool-sprites.gif"); 
+/* background-image: url("<?php Yii::app()->baseUrl.'/css/ext_form/img/tool-sprites.gif';?> "); */
+
+display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
+    *margin-right: .3em;
+    line-height: 14px;
+    vertical-align: text-top;
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+}
+
+.btn_close{
+	/*display: inline-block;	*/
+	cursor: pointer;
+    width: 16px;
+    height: 16px;
+	
+    margin-top: 1px;
+    *margin-right: .3em;
+    line-height: 14px;
+    /*	vertical-align: text-top;	*/
+	
+	/*	background-color: #eee;
+    background-image:  url(<?php Yii::app()->request->baseUrl;?>'../../images/loading/black_loading5.gif'); */
+	
+	background-image: url("../../css/ext_form/img/tool-sprites.gif"); 
+	 background-position: 1px 1px;
+    background-repeat: no-repeat;
+    opacity: 1;
+}
